@@ -1,0 +1,14 @@
+Design Module List
+
+Total Module Definition Coverage Summary 
+SCORE  LINE   COND   TOGGLE BRANCH 
+ 99.17 100.00 100.00  96.67 100.00 
+
+
+Total modules in report: 3
+-------------------------------------------------------------------------------
+SCORE  LINE   COND   TOGGLE BRANCH NAME             
+ 95.83 --     --      95.83 --     if_fifo          
+ 99.31 100.00 100.00  97.22 100.00 Synchronous_FIFO 
+100.00 100.00 --     --     --     tb_fifo          
+

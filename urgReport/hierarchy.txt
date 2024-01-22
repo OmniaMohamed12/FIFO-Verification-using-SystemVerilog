@@ -1,0 +1,12 @@
+Design Hierarchy
+
+
+----------------
+SCORE  LINE   COND   TOGGLE BRANCH         
+ 99.17 100.00 100.00  96.67 100.00 tb_fifo 
+  
+  ----------------
+  SCORE  LINE   COND   TOGGLE BRANCH     
+   99.31 100.00 100.00  97.22 100.00 dut 
+   95.83 --     --      95.83 --     ifc 
+

@@ -1,0 +1,163 @@
+Group : $unit::coverage_fifo::cg
+
+===============================================================================
+Group : $unit::coverage_fifo::cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/home/ICer/verification/FIFO/coverage_fifo.svh
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   $unit::coverage_fifo::cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 24       0         24      100.00  
+
+
+Variables for Group  $unit::coverage_fifo::cg
+
+
+VARIABLE     EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+write_enable 2        0         2       100.00  100  1      1        0                    
+read_enable  2        0         2       100.00  100  1      1        0                    
+full_flag    2        0         2       100.00  100  1      1        0                    
+empty_flag   2        0         2       100.00  100  1      1        0                    
+datain       8        0         8       100.00  100  1      1        8                    
+dataout      8        0         8       100.00  100  1      1        8                    
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable write_enable
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for write_enable
+
+
+Bins
+
+NAME       COUNT AT LEAST 
+write_en_l 26    1        
+write_en_h 24    1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable read_enable
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for read_enable
+
+
+Bins
+
+NAME     COUNT AT LEAST 
+readen_l 24    1        
+readen_h 26    1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable full_flag
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for full_flag
+
+
+Bins
+
+NAME   COUNT AT LEAST 
+full_l 42    1        
+full_h 8     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable empty_flag
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for empty_flag
+
+
+Bins
+
+NAME    COUNT AT LEAST 
+empty_l 41    1        
+empty_h 9     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable datain
+
+
+CATEGORY                     EXPECTED UNCOVERED COVERED PERCENT 
+Automatically Generated Bins 8        0         8       100.00  
+
+
+Automatically Generated Bins for datain
+
+
+Bins
+
+NAME    COUNT AT LEAST 
+auto[0] 4     1        
+auto[1] 9     1        
+auto[2] 8     1        
+auto[3] 4     1        
+auto[4] 7     1        
+auto[5] 5     1        
+auto[6] 6     1        
+auto[7] 7     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable dataout
+
+
+CATEGORY                     EXPECTED UNCOVERED COVERED PERCENT 
+Automatically Generated Bins 8        0         8       100.00  
+
+
+Automatically Generated Bins for dataout
+
+
+Bins
+
+NAME    COUNT AT LEAST 
+auto[0] 7     1        
+auto[1] 5     1        
+auto[2] 3     1        
+auto[3] 4     1        
+auto[4] 7     1        
+auto[5] 8     1        
+auto[6] 8     1        
+auto[7] 8     1        
+
+

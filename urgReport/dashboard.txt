@@ -1,0 +1,34 @@
+Dashboard
+
+Date: Fri Jan 12 08:41:17 2024
+
+User: ICer
+
+Version: O-2018.09-1
+Command line: urg -dir simv.vdb -show text 
+
+Number of tests: 1
+
+-------------------------------------------------------------------------------
+Total Coverage Summary 
+SCORE  LINE   COND   TOGGLE BRANCH GROUP  
+ 99.33 100.00 100.00  96.67 100.00 100.00 
+
+
+-------------------------------------------------------------------------------
+Hierarchical coverage data for top-level instances 
+SCORE  LINE   COND   TOGGLE BRANCH NAME    
+ 99.17 100.00 100.00  96.67 100.00 tb_fifo 
+
+
+-------------------------------------------------------------------------------
+Total Module Definition Coverage Summary 
+SCORE  LINE   COND   TOGGLE BRANCH 
+ 99.17 100.00 100.00  96.67 100.00 
+
+
+-------------------------------------------------------------------------------
+Total Groups Coverage Summary 
+SCORE  WEIGHT 
+100.00 1      
+

@@ -1,0 +1,345 @@
+===============================================================================
+Module : if_fifo
+===============================================================================
+SCORE  LINE   COND   TOGGLE BRANCH 
+ 95.83 --     --      95.83 --     
+
+Source File(s) : 
+
+/home/ICer/verification/FIFO/if_fifo.sv
+
+Module self-instances :
+
+SCORE  LINE   COND   TOGGLE BRANCH NAME        
+ 95.83 --     --      95.83 --     tb_fifo.ifc 
+
+
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Module : if_fifo
+                Total Covered Percent 
+Totals          8     7       87.50   
+Total Bits      24    23      95.83   
+Total Bits 0->1 12    12      100.00  
+Total Bits 1->0 12    11      91.67   
+
+                              
+Signals          8  7  87.50  
+Signal Bits      24 23 95.83  
+Signal Bits 0->1 12 12 100.00 
+Signal Bits 1->0 12 11 91.67  
+
+Signal Details
+              Toggle Toggle 1->0 Toggle 0->1 
+clk           Yes    Yes         Yes         
+rst_n         No     No          Yes         
+read_en       Yes    Yes         Yes         
+write_en      Yes    Yes         Yes         
+data_in[2:0]  Yes    Yes         Yes         
+data_out[2:0] Yes    Yes         Yes         
+full          Yes    Yes         Yes         
+empty         Yes    Yes         Yes         
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : tb_fifo.ifc
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE BRANCH 
+ 95.83 --     --      95.83 --     
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE BRANCH 
+ 95.83 --     --      95.83 --     
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE BRANCH NAME    
+ 95.83 --     --      95.83 --     if_fifo 
+
+
+Parent : 
+
+SCORE  LINE   COND   TOGGLE BRANCH NAME    
+100.00 100.00 --     --     --     tb_fifo 
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.
+===============================================================================
+Module : Synchronous_FIFO
+===============================================================================
+SCORE  LINE   COND   TOGGLE BRANCH 
+ 99.31 100.00 100.00  97.22 100.00 
+
+Source File(s) : 
+
+/home/ICer/verification/FIFO/Synchronous_FIFO.sv
+
+Module self-instances :
+
+SCORE  LINE   COND   TOGGLE BRANCH NAME        
+ 99.31 100.00 100.00  97.22 100.00 tb_fifo.dut 
+
+
+
+-------------------------------------------------------------------------------
+Line Coverage for Module : Synchronous_FIFO
+
+             Line No.   Total   Covered  Percent
+TOTAL                       10       10   100.00
+ALWAYS              8       10       10   100.00
+
+7                       always@(posedge clk)begin
+8          1/1          	if(!rst_n)begin
+9          1/1          		write_ptr<=0;
+10         1/1          		read_ptr<=0;
+11         1/1          		data_out<=0;
+12                      	end
+13                        else begin
+14         1/1              if(write_en && !full )begin
+15         1/1                fifo[write_ptr[bits-1:0]]<=data_in;
+16         1/1          		write_ptr<=write_ptr+1;
+17                      	end
+                        MISSING_ELSE
+18         1/1              if(read_en && !empty )begin
+19         1/1                data_out<=fifo[read_ptr[bits-1:0]];
+20         1/1          		read_ptr<=read_ptr+1;
+21                      	end
+                        MISSING_ELSE
+
+-------------------------------------------------------------------------------
+Cond Coverage for Module : Synchronous_FIFO
+
+               Total   Covered  Percent
+Conditions          6        6   100.00
+Logical             6        6   100.00
+Non-Logical         0        0
+Event               0        0
+
+ LINE       14
+ EXPRESSION (write_en && ((!full)))
+             ----1---    ----2----
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Covered
+ 1   1  Covered
+
+ LINE       18
+ EXPRESSION (read_en && ((!empty)))
+             ---1---    -----2----
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Covered
+ 1   1  Covered
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Module : Synchronous_FIFO
+                Total Covered Percent 
+Totals          10    9       90.00   
+Total Bits      36    35      97.22   
+Total Bits 0->1 18    18      100.00  
+Total Bits 1->0 18    17      94.44   
+
+                            
+Ports          8  7  87.50  
+Port Bits      24 23 95.83  
+Port Bits 0->1 12 12 100.00 
+Port Bits 1->0 12 11 91.67  
+
+                              
+Signals          2  2  100.00 
+Signal Bits      12 12 100.00 
+Signal Bits 0->1 6  6  100.00 
+Signal Bits 1->0 6  6  100.00 
+
+Port Details
+              Toggle Toggle 1->0 Toggle 0->1 Direction 
+clk           Yes    Yes         Yes         INPUT     
+rst_n         No     No          Yes         INPUT     
+read_en       Yes    Yes         Yes         INPUT     
+write_en      Yes    Yes         Yes         INPUT     
+data_in[2:0]  Yes    Yes         Yes         INPUT     
+data_out[2:0] Yes    Yes         Yes         OUTPUT    
+full          Yes    Yes         Yes         OUTPUT    
+empty         Yes    Yes         Yes         OUTPUT    
+
+Signal Details
+               Toggle Toggle 1->0 Toggle 0->1 
+write_ptr[2:0] Yes    Yes         Yes         
+read_ptr[2:0]  Yes    Yes         Yes         
+
+
+-------------------------------------------------------------------------------
+Branch Coverage for Module : Synchronous_FIFO
+         Line No. Total Covered Percent 
+Branches          5     5       100.00  
+IF       8        5     5       100.00  
+
+
+8          	if(!rst_n)begin
+           	-1-  
+9          		write_ptr<=0;
+           		==>
+10         		read_ptr<=0;
+11         		data_out<=0;
+12         	end
+13           else begin
+14             if(write_en && !full )begin
+               -2-  
+15               fifo[write_ptr[bits-1:0]]<=data_in;
+                 ==>
+16         		write_ptr<=write_ptr+1;
+17         	end
+           	MISSING_ELSE
+           	==>
+18             if(read_en && !empty )begin
+               -3-  
+19               data_out<=fifo[read_ptr[bits-1:0]];
+                 ==>
+20         		read_ptr<=read_ptr+1;
+21         	end
+           	MISSING_ELSE
+           	==>
+
+Branches:
+
+-1- -2- -3- Status  
+1   -   -   Covered 
+0   1   -   Covered 
+0   0   -   Covered 
+0   -   1   Covered 
+0   -   0   Covered 
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : tb_fifo.dut
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE BRANCH 
+ 99.31 100.00 100.00  97.22 100.00 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE BRANCH 
+ 99.31 100.00 100.00  97.22 100.00 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE BRANCH NAME             
+ 99.31 100.00 100.00  97.22 100.00 Synchronous_FIFO 
+
+
+Parent : 
+
+SCORE  LINE   COND   TOGGLE BRANCH NAME    
+100.00 100.00 --     --     --     tb_fifo 
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.
+===============================================================================
+Module : tb_fifo
+===============================================================================
+SCORE  LINE   COND   TOGGLE BRANCH 
+100.00 100.00 --     --     --     
+
+Source File(s) : 
+
+/home/ICer/verification/FIFO/testbench.sv
+
+Module self-instances :
+
+SCORE  LINE   COND   TOGGLE BRANCH NAME    
+100.00 100.00 --     --     --     tb_fifo 
+
+
+
+-------------------------------------------------------------------------------
+Line Coverage for Module : tb_fifo
+
+             Line No.   Total   Covered  Percent
+TOTAL                        9        9   100.00
+INITIAL            18        4        4   100.00
+INITIAL            22        3        3   100.00
+INITIAL            27        2        2   100.00
+
+17                        initial begin
+18         1/1          	ifc.clk<=0;
+19         3/3          	forever #5 ifc.clk<=~ifc.clk;
+20                         end
+21                        initial begin
+22         1/1              env=new(ifc);
+23         1/1          	env.gen.num_tr=50;
+24         1/1          	env.run();
+25                      	end
+26                        initial begin
+27         1/1              $dumpfile("test.vcd");
+28         1/1              $dumpvars;
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : tb_fifo
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE BRANCH 
+100.00 100.00 --     --     --     
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE BRANCH 
+ 99.17 100.00 100.00  96.67 100.00 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE BRANCH NAME    
+100.00 100.00 --     --     --     tb_fifo 
+
+
+Parent : 
+
+none
+----------------
+
+
+Subtrees :
+
+SCORE  LINE   COND   TOGGLE BRANCH NAME 
+ 99.31 100.00 100.00  97.22 100.00 dut  
+ 95.83 --     --      95.83 --     ifc  
+
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.
